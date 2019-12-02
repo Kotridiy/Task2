@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextParser", "TextParser\TextParser.csproj", "{93562B5E-9DAC-461D-AF0A-3084EEBC9A60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextTask", "TextTask\TextTask.csproj", "{91EB5D1C-106F-40C9-AD3F-7A4A7C7B16AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93562B5E-9DAC-461D-AF0A-3084EEBC9A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93562B5E-9DAC-461D-AF0A-3084EEBC9A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93562B5E-9DAC-461D-AF0A-3084EEBC9A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93562B5E-9DAC-461D-AF0A-3084EEBC9A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91EB5D1C-106F-40C9-AD3F-7A4A7C7B16AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91EB5D1C-106F-40C9-AD3F-7A4A7C7B16AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91EB5D1C-106F-40C9-AD3F-7A4A7C7B16AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91EB5D1C-106F-40C9-AD3F-7A4A7C7B16AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D0C7849-B03D-427D-AC13-BC81B01B1AD2}
+	EndGlobalSection
+EndGlobal
