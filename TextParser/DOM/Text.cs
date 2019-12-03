@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using TextParser.DOM.TextItem;
 
 namespace TextParser.DOM
 {
     public class Text : IEnumerable<Sentence>
     {
-        private Sentence[] sentences;
+        private Sentence[] _sentences;
 
         public Text(Sentence[] sentences)
         {
-            this.sentences = sentences ?? throw new ArgumentNullException(nameof(sentences));
+            _sentences = sentences ?? throw new ArgumentNullException(nameof(sentences));
         }
 
         public IEnumerator<Sentence> GetEnumerator()
         {
-            foreach (var sentence in sentences)
+            foreach (var sentence in _sentences)
             {
                 yield return sentence;
             }
@@ -31,8 +30,14 @@ namespace TextParser.DOM
         {
             get
             {
-                return sentences[index];
+                return _sentences[index];
+            }
+            set
+            {
+                _sentences[index] = value;
             }
         }
+
+        public int Length => _sentences.Length;
     }
 }

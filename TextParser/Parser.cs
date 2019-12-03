@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using TextParser.DOM;
 using TextParser.DOM.SentenceItem;
-using TextParser.DOM.TextItem;
 
 namespace TextParser
 {
@@ -14,7 +13,7 @@ namespace TextParser
         public Func<SymbolList, ISentenceItem> CreatePunctuation { get; set; }
         public Func<SymbolList, ISentenceItem> CreateSeparator { get; set; }
         
-        List<char> ends = new List<char>{'.', '!', '?'};
+        static List<char> _ends = new List<char>{'.', '!', '?'};
         HashSet<Word> Words { get; set; } 
 
         public Parser() : this(new ParserSettings())
@@ -26,7 +25,7 @@ namespace TextParser
             Words = new HashSet<Word>();
             GetState = settings.GetState ?? BaseGetState;
             CreateWord = settings.CreateWord ?? BaseCreateWord;
-            CreatePunctuation = settings.CreateSeparator ?? BaseCreatePunctuation;
+            CreatePunctuation = settings.CreatePunctuation ?? BaseCreatePunctuation;
             CreateSeparator = settings.CreateSeparator ?? BaseCreateSeparator;
         }
 
@@ -97,6 +96,11 @@ namespace TextParser
             }
 
             items.Remove(endPunctuation);
+            if (items[0] is Separator)
+            {
+                items.Remove(items[0]);
+            }
+
             return new Sentence(items, endPunctuation);
         }
 
@@ -131,7 +135,7 @@ namespace TextParser
             }
             else if (Char.IsPunctuation(symbol))
             {
-                if (ends.Contains(symbol))
+                if (_ends.Contains(symbol))
                 {
                     return ParserState.EndSentense;
                 }
